@@ -1,0 +1,14 @@
+ #5 minute disk thrashing benchmark
+ # generates equal amounts of random read and write IO on every drive
+ # will generate metrics for each drive
+[global]
+ioengine=libaio
+direct=1
+unified_rw_reporting=1
+rw=randrw
+time_based=1
+runtime=300s
+ 
+# Samsung 850 Pro 128GB (on a 6G SATA port) (sdd)
+[/dev/sdb]
+write_lat_log=sdb
